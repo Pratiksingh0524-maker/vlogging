@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pratik Singh Vlogs</title>
+<meta name="description" content="Travel diaries, food hunts, daily life and tech tips by Pratik Singh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#home">Pratik <b>Singh</b> Vlogs</a>
+  <nav aria-label="Main">
+    <a href="#home">Home</a><a href="#videos">Videos</a><a href="#about">About</a><a href="#subscribe">Subscribe</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <button id="themeBtn" class="icon-btn" aria-label="Toggle dark mode">🌓</button>
+    <a class="btn small" href="#subscribe">Subscribe</a>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Real days, real places, filmed by Pratik Singh.</h1>
+    <p>Travel diaries, food hunts, daily life and tech tips. New vlog every week.</p>
+    <div class="row">
+      <button class="btn" id="watchLatest">▶ Watch latest vlog</button>
+      <a class="btn ghost" href="#videos">Browse videos</a>
+    </div>
+    <dl class="stats">
+      <div><dt>Subscribers</dt><dd>12.4K</dd></div>
+      <div><dt>Videos</dt><dd>86</dd></div>
+      <div><dt>Total views</dt><dd>1.2M</dd></div>
+    </dl>
+  </div>
+  <button class="featured" id="featured" aria-label="Play featured vlog">
+    <span class="play">▶</span>
+    <span class="feat-label">Featured · 12:08</span>
+  </button>
+</section>
+
+<section id="videos" class="section">
+  <div class="section-head">
+    <h2>Latest videos</h2>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search videos" aria-label="Search videos">
+      <select id="sort" aria-label="Sort videos">
+        <option value="new">Newest</option><option value="views">Most viewed</option><option value="likes">Most liked</option>
+      </select>
+    </div>
+  </div>
+  <div id="chips" class="chips" role="group" aria-label="Categories"></div>
+  <div id="grid" class="grid"></div>
+  <p id="empty" class="empty" hidden>No videos match your search. Clear the search box or pick another category.</p>
+</section>
+
+<section id="about" class="section about">
+  <div class="avatar" aria-hidden="true">PS</div>
+  <div>
+    <h2>Hi, I'm Pratik Singh</h2>
+    <p>I started vlogging to remember the little moments, and it grew into a community. I film trips, street food, study and work routines, and gadgets I actually use. Thanks for watching and being part of it.</p>
+    <div class="socials">
+      <a href="#" aria-label="YouTube">YouTube</a><a href="#" aria-label="Instagram">Instagram</a><a href="#" aria-label="X">X</a><a href="#" aria-label="Facebook">Facebook</a><a href="#" aria-label="WhatsApp">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="subscribe" class="section band">
+  <h2>Never miss a vlog</h2>
+  <p>Get a short email when a new video goes live.</p>
+  <form id="subForm" class="inline-form" novalidate>
+    <input id="subEmail" type="email" placeholder="you@example.com" aria-label="Email address" required>
+    <button class="btn" type="submit">Subscribe</button>
+  </form>
+  <p id="subMsg" class="msg" role="status"></p>
+</section>
+
+<section id="contact" class="section contact">
+  <div>
+    <h2>Contact Pratik</h2>
+    <p>For collaborations, sponsorships or just to say hi, send a message. Replies usually within 2 days.</p>
+  </div>
+  <form id="contactForm" novalidate>
+    <label>Name<input id="cName" required></label>
+    <label>Email<input id="cEmail" type="email" required></label>
+    <label>Topic
+      <select id="cTopic"><option>General</option><option>Collaboration</option><option>Sponsorship</option><option>Feedback</option></select>
+    </label>
+    <label>Message<textarea id="cMsg" rows="4" required></textarea></label>
+    <button class="btn" type="submit">Send message</button>
+    <p id="contactMsg" class="msg" role="status"></p>
+  </form>
+</section>
+</main>
+
+<footer class="footer">
+  <p>© Pratik Singh Vlogs. All rights reserved.</p>
+  <p>Pratik Singh · Enrollment no: 25SE02DS036 · Batch C</p>
+  <a href="#home">Back to top</a>
+</footer>
+
+<dialog id="player" aria-label="Video player">
+  <div class="screen" id="screen"><span id="screenIcon">▶</span></div>
+  <div class="bar"><div id="progress"></div></div>
+  <div class="player-head">
+    <div><h3 id="pTitle"></h3><small id="pMeta"></small></div>
+    <span id="time">0:00</span>
+  </div>
+  <div class="row">
+    <button class="btn ghost small" id="likeBtn">👍 Like</button>
+    <button class="btn ghost small" id="shareBtn">🔗 Share</button>
+    <button class="btn ghost small" id="saveBtn">🔖 Save</button>
+    <button class="btn small" id="closeBtn">Close</button>
+  </div>
+  <h4>Comments</h4>
+  <form id="commentForm" class="inline-form">
+    <input id="commentInput" placeholder="Add a comment" aria-label="Add a comment">
+    <button class="btn small" type="submit">Post</button>
+  </form>
+  <ul id="comments"></ul>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
